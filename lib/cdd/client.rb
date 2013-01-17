@@ -12,19 +12,17 @@ module CDD
     end
 
     def vaults
-      execute(vaults_url)
+      execute(vaults_uri).collect do |hash|
+        CDD::Vault.new(self,hash)
+      end
     end
 
-    def vaults_url
-      "#{self.url}/api/v1/vaults"
+    def vaults_uri
+      "/api/v1/vaults"
     end
 
-    def projects_url(vault_id)
-      "#{self.url}/api/v1/vaults/#{vault_id}/projects"
-    end
-
-    def execute(url, params={})
-      response = RestClient.get url, { :params => params, "X-CDD-Token" => token }
+    def execute(uri, params={})
+      response = RestClient.get "#{self.url}#{uri}", { :params => params, "X-CDD-Token" => token }
       JSON.parse(response.to_s)
     end
   end
