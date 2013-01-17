@@ -28,12 +28,22 @@ cdd = CDD::Client.new(YOUR_TOKEN)
 Retrieve your vaults
 
 ```ruby
-cdd.vaults
+vaults = cdd.vaults
 ```
 
-Returns
-```
+Returns a list of vault objects that look like:
+```ruby
 [{"name"=>"Your Vault Name", "id"=>1234}]
+```
+
+With a vault object, you can retrieve it's project list:
+```ruby
+projects = vaults.first.projects
+```
+
+Returns a list of project objects that look like:
+```ruby
+[{"name"=>"Your Project Name", "id"=>1234}]
 ```
 
 ## Contributing
