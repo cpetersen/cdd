@@ -18,7 +18,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Setup your client:
+
+```ruby
+require 'cdd'
+cdd = CDD::Client.new(YOUR_TOKEN)
+```
+
+Retrieve your vaults
+
+```ruby
+cdd.vaults
+```
+
+Returns
+```
+[{"name"=>"Your Vault Name", "id"=>1234}]
+```
 
 ## Contributing
 
