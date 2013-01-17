@@ -1,6 +1,6 @@
-# Cdd
+# CDD - Collaborative Drug Discovery
 
-TODO: Write a gem description
+Collaborative Drug Discovery is a web based tool for storing and sharing pharmaceutical research. This is a ruby wrapper for their API.
 
 ## Installation
 

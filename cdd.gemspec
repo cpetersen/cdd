@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Christopher Petersen"]
   gem.email         = ["christopher.petersen@gmail.com"]
   gem.description   = %q{A ruby wrapper for CDD's API}
-  gem.summary       = %q{Collaborative Drug Discovery is a web based tool for storing and sharing pharmaceutical research.}
+  gem.summary       = %q{Collaborative Drug Discovery is a web based tool for storing and sharing pharmaceutical research. This is a ruby wrapper for their API.}
   gem.homepage      = "http://github.com/cpetersen/cdd"
 
   gem.add_dependency('json')
