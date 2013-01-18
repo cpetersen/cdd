@@ -1,16 +1,5 @@
 module CDD
-  class Vault
-    attr_accessor :id
-    attr_accessor :name
-    attr_accessor :client
-
-    def initialize(client, options={})
-      self.client = client
-      options.each do |k,v|
-        self.send("#{k}=",v)
-      end
-    end
-
+  class Vault < Base
     def projects
       client.execute(projects_url).collect do |hash|
         CDD::Project.new(self.client, hash)
@@ -19,6 +8,16 @@ module CDD
 
     def projects_url
       "/api/v1/vaults/#{self.id}/projects"
+    end
+
+    def searches
+      client.execute(projects_url).collect do |hash|
+        CDD::Search.new(self.client, hash)
+      end
+    end
+
+    def searches_url
+      "/api/v1/vaults/#{self.id}/searches"
     end
   end
 end

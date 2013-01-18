@@ -1,16 +1,5 @@
 module CDD
-  class Project
-    attr_accessor :id
-    attr_accessor :name
-    attr_accessor :client
-
-    def initialize(client, options={})
-      self.client = client
-      options.each do |k,v|
-        self.send("#{k}=",v)
-      end
-    end
-
+  class Project < Base
     def projects
       client.execute(projects_url)
     end

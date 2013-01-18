@@ -1,4 +1,6 @@
+require "cdd/base"
 require "cdd/client"
 require "cdd/project"
+require "cdd/search"
 require "cdd/vault"
 require "cdd/version"
