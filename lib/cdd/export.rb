@@ -14,9 +14,7 @@ module CDD
     end
 
     def data
-      puts "CALLING DATA 1"
       response = RestClient.get "#{client.url}#{data_url}", { :params => {}, "X-CDD-Token" => client.token }
-      puts "CALLING DATA 2 [#{response.inspect}]"
       response.to_s if response
     end
 

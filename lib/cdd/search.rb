@@ -13,14 +13,10 @@ module CDD
     def export(projects=[], format="csv", &block)
       e = start_export(projects, format)
       state = e.poll
-      puts state.inspect
       while ["new", "started", "starting"].include?(state["status"]) do
         state = e.poll
-        puts state.inspect
       end
-      puts "AFTER"
       data = e.data
-      puts "DATA [#{data}]"
       if block
         return block.call(data)
       else
