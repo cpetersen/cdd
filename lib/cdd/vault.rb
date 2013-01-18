@@ -3,7 +3,7 @@ module CDD
     attr_accessor :name
 
     def projects
-      client.execute(projects_url).collect do |hash|
+      @project ||= client.execute(projects_url).collect do |hash|
         CDD::Project.new(self.client, {:vault => self}.merge(hash))
       end
     end
@@ -13,7 +13,7 @@ module CDD
     end
 
     def searches
-      client.execute(searches_url).collect do |hash|
+      @searches ||= client.execute(searches_url).collect do |hash|
         CDD::Search.new(client, {:vault => self}.merge(hash))
       end
     end

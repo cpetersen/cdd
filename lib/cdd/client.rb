@@ -12,7 +12,7 @@ module CDD
     end
 
     def vaults
-      execute(vaults_uri).collect do |hash|
+      @vaults ||= execute(vaults_uri).collect do |hash|
         CDD::Vault.new(self,hash)
       end
     end
