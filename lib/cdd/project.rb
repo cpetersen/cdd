@@ -1,5 +1,8 @@
 module CDD
   class Project < Base
+    attr_accessor :name
+    attr_accessor :vault
+
     def projects
       client.execute(projects_url)
     end
