@@ -12,12 +12,12 @@ module CDD
     end
 
     def vaults
-      @vaults ||= execute(vaults_uri).collect do |hash|
+      @vaults ||= execute(vaults_url).collect do |hash|
         CDD::Vault.new(self,hash)
       end
     end
 
-    def vaults_uri
+    def vaults_url
       "/api/v1/vaults"
     end
 
