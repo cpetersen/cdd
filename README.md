@@ -2,6 +2,8 @@
 
 Collaborative Drug Discovery is a web based tool for storing and sharing pharmaceutical research. This is a ruby wrapper for their API.
 
+CDD's API can be found [here](https://support.collaborativedrug.com/categories/20081556-cdd-api-documentation).
+
 ## Installation
 
 Add this line to your application's Gemfile:
