@@ -1,4 +1,4 @@
-# CDD - Collaborative Drug Discovery ![Build Status](https://travis-ci.org/cpetersen/cdd.png?branch=master)
+# CDD - Collaborative Drug Discovery [![Build Status](https://travis-ci.org/cpetersen/cdd.png?branch=master)](https://travis-ci.org/cpetersen/cdd) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/cpetersen/cdd)
 
 Collaborative Drug Discovery is a web based tool for storing and sharing pharmaceutical research. This is a ruby wrapper for their API.
 
