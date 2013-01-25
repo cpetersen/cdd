@@ -2,6 +2,16 @@ module CDD
   class Vault < Base
     attr_accessor :name
 
+    def data_sets
+      @project ||= client.execute(data_sets_url).collect do |hash|
+        CDD::DataSet.new(self.client, {:vault => self}.merge(hash))
+      end
+    end
+
+    def data_sets_url
+      "/api/v1/vaults/#{self.id}/data_sets"
+    end
+
     def projects
       @project ||= client.execute(projects_url).collect do |hash|
         CDD::Project.new(self.client, {:vault => self}.merge(hash))

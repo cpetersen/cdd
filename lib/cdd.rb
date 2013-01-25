@@ -1,5 +1,6 @@
 require "cdd/base"
 require "cdd/client"
+require "cdd/data_set"
 require "cdd/export"
 require "cdd/project"
 require "cdd/search"
