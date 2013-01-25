@@ -3,7 +3,7 @@ module CDD
     attr_accessor :name
 
     def data_sets
-      @project ||= client.execute(data_sets_url).collect do |hash|
+      @data_sets ||= client.execute(data_sets_url).collect do |hash|
         CDD::DataSet.new(self.client, {:vault => self}.merge(hash))
       end
     end
