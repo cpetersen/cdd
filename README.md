@@ -50,6 +50,17 @@ Returns a list of project objects that look like:
 [{"name"=>"Your Project Name", "id"=>1234}]
 ```
 
+## DataSets
+Given a vault object, you can retrieve it's available data sets:
+```ruby
+data_sets = vaults.first.data_sets
+```
+
+Returns a list of data_set objects that look like:
+```ruby
+[{"name"=>"Data Set X, "id"=>1234567}]
+```
+
 ## Searches
 Given a vault object, you can retrieve it's searches list:
 ```ruby
