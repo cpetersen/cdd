@@ -100,7 +100,7 @@ vaults = cdd.vaults
 vault = vaults.first
 search = vault.searches.first
 projects = vault.projects
-search.export(projects, "sdf") do |data|
+search.export(projects, [], "sdf") do |data|
   puts data
 end
 ```
@@ -108,6 +108,8 @@ end
 ### Asynchronous Export
 
 The synchronous export method is provided as a courtesy. If you could be exporting any non-trivial amount of data, you should use the aynchronous method.
+
+In this example, we will use publicly accessible data sets, this should result in a larger result set (and why we are using the )
 
 To begin an export using the method ```Search#start_export```. This will return an ```Export``` object which can be polled or used to retrieve data.
 
@@ -119,7 +121,8 @@ vaults = cdd.vaults
 vault = vaults.first
 search = vault.searches.first
 projects = vault.projects
-export = search.start_export(projects, "sdf")
+data_sets = vault.data_sets
+export = search.start_export(projects, data_sets, "sdf")
 export_state = export.poll
 puts export_state["status"]
 ```
