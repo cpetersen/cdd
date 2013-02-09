@@ -60,7 +60,7 @@ data_sets = vaults.first.data_sets
 
 Returns a list of data_set objects that look like:
 ```ruby
-[{"name"=>"Data Set X, "id"=>1234567}]
+[{"name"=>"Data Set X", "id"=>1234567}]
 ```
 
 ## Searches
